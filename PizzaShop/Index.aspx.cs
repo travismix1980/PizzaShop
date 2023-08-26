@@ -27,7 +27,7 @@ namespace PizzaShop
             {
                 total += 13.00;
             }
-            else if(RdoLarge.Checked)
+            else if (RdoLarge.Checked)
             {
                 total += 16.00;
             }
@@ -37,7 +37,19 @@ namespace PizzaShop
                 total += 2.00;
             }
 
+            foreach (ListItem topping in ToppingList.Items)
+            {
+                if (topping.Selected)
+                {
+                    total += Convert.ToDouble(topping.Value);
+                }
+            }
 
+            // check to see if only pineapple and canadian bacon toppings are selected for $2 off
+            if (!ToppingList.Items[0].Selected && !ToppingList.Items[1].Selected && !ToppingList.Items[2].Selected && !ToppingList.Items[3].Selected && ToppingList.Items[4].Selected && ToppingList.Items[5].Selected)
+            {
+                total -= 2.00;
+            }
 
             // output total
             LblTotal.Text = $"<b>Total: ${string.Format("{0:0.00}", total)}</b>";

@@ -32,7 +32,7 @@
             </p>
             <h2>Toppings</h2>
             <p>
-                <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                <asp:CheckBoxList ID="ToppingList" runat="server">
                     <asp:ListItem Value="1.50">Pepperoni (+ $1.50)</asp:ListItem>
                     <asp:ListItem Value="0.75">Onions (+ $0.75)</asp:ListItem>
                     <asp:ListItem Value="0.50">Green Peppers (+ $0.50)</asp:ListItem>
